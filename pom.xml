@@ -43,7 +43,7 @@
           </execution>
         </executions>
         <configuration>
-          <mainClass>sigua.giorgi.binancetrader.UniqueLinesFinder</mainClass>
+          <mainClass>sigua.giorgi.task.UniqueLinesFinder</mainClass>
         </configuration>
       </plugin>
     </plugins>
