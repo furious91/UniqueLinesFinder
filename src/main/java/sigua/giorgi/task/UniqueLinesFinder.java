@@ -1,4 +1,4 @@
-package sigua.giorgi.binancetrader;
+package sigua.giorgi.task;
 
 import java.io.*;
 import java.util.ArrayList;
