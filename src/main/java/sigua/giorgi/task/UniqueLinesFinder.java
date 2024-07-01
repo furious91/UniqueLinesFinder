@@ -1,10 +1,7 @@
 package sigua.giorgi.task;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * Hello world!
@@ -20,7 +17,7 @@ public class UniqueLinesFinder {
     }
 
     public static List<String> findUniqueLines() throws IOException {
-        List<String> uniqueLines = new ArrayList<>();
+        List<String> uniqueLines = new LinkedList<>();
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(Objects.requireNonNull(UniqueLinesFinder.class.getClassLoader().getResourceAsStream("ips.txt"))))) {
             String line;
             while ((line = reader.readLine()) != null) {
