@@ -54,7 +54,7 @@ public class UniqueLinesFinder {
         return -1;
     }
 
-    public static void quickSort(List<String> list, int low, int high) {
+    private static void quickSort(List<String> list, int low, int high) {
         if (low < high) {
             int pi = partition(list, low, high);
             quickSort(list, low, pi - 1);
@@ -62,7 +62,7 @@ public class UniqueLinesFinder {
         }
     }
 
-    public static int partition(List<String> list, int low, int high) {
+    private static int partition(List<String> list, int low, int high) {
         String pivot = list.get(high);
         int i = (low - 1);
 
