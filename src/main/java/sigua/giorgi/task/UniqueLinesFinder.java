@@ -23,7 +23,7 @@ public class UniqueLinesFinder {
             while ((line = reader.readLine()) != null) {
                 if (!containsLine(uniqueLines, line)) {
                     uniqueLines.add(line);
-                    Collections.sort(uniqueLines);
+                    quickSort(uniqueLines, 0, uniqueLines.size() - 1);
                 }
             }
         }
@@ -53,4 +53,32 @@ public class UniqueLinesFinder {
 
         return -1;
     }
+
+    public static void quickSort(List<String> list, int low, int high) {
+        if (low < high) {
+            int pi = partition(list, low, high);
+            quickSort(list, low, pi - 1);
+            quickSort(list, pi + 1, high);
+        }
+    }
+
+    public static int partition(List<String> list, int low, int high) {
+        String pivot = list.get(high);
+        int i = (low - 1);
+
+        for (int j = low; j < high; j++) {
+            if (list.get(j).compareTo(pivot) <= 0) {
+                i++;
+                String temp = list.get(i);
+                list.set(i, list.get(j));
+                list.set(j, temp);
+            }
+        }
+        String temp = list.get(i + 1);
+        list.set(i + 1, list.get(high));
+        list.set(high, temp);
+
+        return i + 1;
+    }
+
 }
