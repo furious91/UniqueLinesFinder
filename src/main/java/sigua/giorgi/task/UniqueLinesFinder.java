@@ -17,7 +17,7 @@ public class UniqueLinesFinder {
     }
 
     public static List<String> findUniqueLines() throws IOException {
-        List<String> uniqueLines = new LinkedList<>();
+        List<String> uniqueLines = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(Objects.requireNonNull(UniqueLinesFinder.class.getClassLoader().getResourceAsStream("ips.txt"))))) {
             String line;
             while ((line = reader.readLine()) != null) {
